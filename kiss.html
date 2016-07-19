@@ -1276,6 +1276,7 @@
             
                         {block:Text}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-text{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="text">
+                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                             
                                 <div class="content">
@@ -1288,6 +1289,7 @@
             
                         {block:Audio}      
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-audio{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
+                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                             
                                 <div class="media">
@@ -1301,6 +1303,7 @@
         
                         {block:Video}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-video{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
+                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                                 <div class="media">{Video-500}</div>
             
@@ -1312,6 +1315,7 @@
             
                         {block:Quote}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-quote{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                 <div class="inner">
                                     <div class="content">
                                         <blockquote>{Quote}</blockquote>
@@ -1322,6 +1326,7 @@
                 
                          {block:Link}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-link{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                 <div class="inner">
                                     <div class="content">
                                         <h1><a class="link" href="{URL}">{Name}</a></h1>
@@ -1332,6 +1337,7 @@
                
                         {block:Chat}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-chat{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat"> 
+                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="content">
                                 <ul class="chat">
                                     {block:Lines}<li class="{Alt}">{block:Label}<span class="person">{Label}</span>{/block:Label}<span class="said"> {Line} </span></li>{/block:Lines}
@@ -1342,6 +1348,7 @@
                     
                         {block:Photoset}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-photoset pp{/block:IndexPage}" data-id="{PostID}"  data-notes="{PostNotesURL}" data-pt="photoset">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                     <div class="media">
                                         <div class="fuse-photoset ips">
                                             <div class="photoset-count" data-id="{PostID}"><span>1</span> / {PhotoCount}</div>
@@ -1364,6 +1371,7 @@
                         
                         {block:Answer}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post post-answer{/block:IndexPage}" data-notes="{PostNotesURL}" data-pt="answer">
+                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                         <div class="inner">
                             <div class="content">
                             <div class="asker-box">
