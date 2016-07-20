@@ -29,6 +29,8 @@
         <meta name="color:Sidebar Text" content="#9b9b9b">
         <meta name="color:Sidebar Accent" content="#ffffff">
         <meta name="color:Banner Text" content="#ffffff">
+        <meta name="color:Mobile Header Background" content="#000000">
+        <meta name="color:Mobile Header Text" content="#ffffff">
 
             
         <meta name="if:Repeat Background Image" content="0">
@@ -87,9 +89,6 @@
         <meta name="text:Sidebar Text Widget" content="">
         <meta name="text:Sidebar Image Ad Link" content="#">
         <meta name="text:Sidebar Google Ad Script" content=""/>
-        <meta name="if:Soundcloud Widget Shuffle" content="0"/>
-        <meta name="text:Soundcloud Widget URL" content=""/>
-        <meta name="if:Soundcloud Widget Autoplay" content="0"/>
         
         
         <meta name="text:Instagram URL" content="">
@@ -165,7 +164,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={select:Body Font}:400,400italic,700,700italic">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={select:Banner Font}:400,400italic,700,700italic">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={select:Logo Font}:400,400italic,700,700italic">
-    <link href="http://static.tumblr.com/evx2wil/FwGoaka5w/core.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/evx2wil/Skhoalclk/core.css" rel="stylesheet">
     
     <style type="text/css">
         
@@ -501,18 +500,12 @@
 
         .close-modal {
             position: fixed;
-            top: 40px;
-            left: 28px;
-            opacity: 0;
-            visibility:hidden;
+            top: 46px;
+            left: 50px;
             cursor: pointer;
-            z-index:999999999;
-            transition:0.7s all ease-out 0.8s;
+            z-index:999;
         }
-        .close-modal.visible {
-            opacity:1;
-            visibility:visible;
-        }
+
         
         @media (max-width: 550px) {
             .close-modal {
@@ -574,18 +567,13 @@
             position: fixed;
             overflow-y: scroll;
             opacity: 0;
-            visibility:hidden;
-            -webkit-transition:0.7s all ease-out 0.2s;
-            transition:0.7s all ease-out 0.2s;
+            transform:translateY(100%);
             backface-visibility:hidden;
             z-index:99;
         }
         .fuse-overlay.visible {
             z-index: 9999;
             opacity: 1;
-            visibility:visible;
-            -webkit-transition:0.7s all ease-out 1.6s;
-            transition:0.7s all ease-out 1.6s;
         }
         .tmblr-iframe--desktop-logged-in-controls.iframe-controls--desktop {
             z-index: 1000000!important;
@@ -618,161 +606,7 @@
                 border: 0.25rem solid transparent;
                 border-top-color: {color:Accent};
             }
-            /* Fuse SC */
-            #fuse-sc {
-                visibility: hidden;
-                position: fixed;
-                left: -200%;
-            }
-            #fuse-sc-player {
-                position: relative;
-                width: 95%;
-                padding: 14px;
-                background: {color:Sidebar Background};
-            }
-            .soundcloud-player {
-                position:fixed;
-                bottom:0;
-                left:0;
-                z-index:11;
-                width:50%;
-                color: {color:Sidebar Accent};
-                border:1px solid {color:Sidebar Background};
-                -webkit-transition:all 0.5s ease-in-out;
-                transition:all 0.5s ease-in-out;
-            }
-            .soundcloud-player a {
-                color:{color:Sidebar Accent};
-            }
-            .soundcloud-player.closed {
-                transform: translateX(-95%);
-            }
-            .soundcloud-close {
-                background:{color:Sidebar Accent};
-                color:{color:Sidebar Background};
-                height:100%;
-                width:5%;
-                position:absolute;
-                cursor:pointer;
-                right:0;
-                top:0;
-            }
-            .soundcloud-close .inner {
-                padding:8px;
-            }
-            .soundcloud-close .fa {
-                font-size:26px;
-                position:absolute;
-                top: 50%;
-                left:50%;
-                -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                transition:all 0.3s linear;
-            }
-            .soundcloud-close.closed .fa {
-                -webkit-transform: translate(-50%, -50%) rotate(180deg);
-                transform: translate(-50%, -50%) rotate(180deg);
-                padding:0;
-            }
-            #fuse-sc-player .img {
-                float: left;
-                position: relative;
-                width: 37px;
-                height: 37px;
-                margin: 0 20px 0 0;
-                /*background: #f1f1f1;*/
-                border-radius: 2px;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            #fuse-sc-player .img .fa {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                font-size: 1.2em;
-                opacity: 0;
-                z-index: 5;
-                transition: opacity .5s;
-            }
-            #fuse-sc-player .img.paused img { 
-                opacity: .5;
-                transition: opacity .5s;
-            }
-            #fuse-sc-player .img.paused .fa {
-                opacity: 1;
-                transition: opacity .5s;
-            }
-            #fuse-sc-player .img img {
-                border-radius: 2px;
-                position: absolute;
-                width: 100%;
-                top: 0;
-                left: 0;
-                transition: opacity .5s;
-            }
-            #fuse-sc-player .sc-meta {
-                float: left;
-                width: 80%;
-            }
-            #fuse-sc-player .sc-info {
-                float: left;
-                width: 80%;
-            }
-            #fuse-sc-player .sc-info p {
-                margin: 0;
-            }   
-            #fuse-sc-player .sc-info .artist {
-                font-weight: 700;
-            }
-            #fuse-sc-player .sc-info .track {
-                font-size: 12px;
-                height: 15px;
-                overflow: hidden;
-            }
-   
-            #fuse-sc-player .sc-controls {
-                width: 20%;
-                float: right;
-                vertical-align:middle;
-                opacity: 1;
-                transition: .3s opacity;
-                padding: 3px;
-                background: {color:Sidebar Background};
-                border-radius: 2px;
-                margin-top:12px;
-            }
-            #fuse-sc-player:hover .sc-controls {
-                opacity: 1;
-                transition: .3s opacity;
-            }
-            #fuse-sc-player .sc-controls .pause-play, #fuse-sc-player .sc-controls .next, #fuse-sc-player .sc-controls .prev {
-                height: 20px;
-                width: 20px;
-                border-radius: 2px;
-                border: 2px solid {color:Sidebar Accent};
-                margin: 0 5px 0 0;
-                display: table;
-                text-align: center;
-                float: right;
-                transition: background .3s;
-                cursor: pointer;
-            }
-            #fuse-sc-player .sc-controls .fa {
-                font-size: 12px;
-                color: {color:Sidebar Accent};
-                display: table-cell;
-                vertical-align: middle; 
-                transition: color .3s;
-            }
-            #fuse-sc-player .sc-controls .pause-play:hover, #fuse-sc-player .sc-controls .next:hover, #fuse-sc-player .sc-controls .prev:hover {
-                background: {color:Sidebar Accent};
-                transition: background .3s;
-            }
-            #fuse-sc-player .sc-controls .pause-play:hover .fa, #fuse-sc-player .sc-controls .next:hover .fa, #fuse-sc-player .sc-controls .prev:hover .fa {
-                color: #fff;
-                transition: color .3s;
-            }
+
             {block:IfNotShowPostMeta}
                 .note-count, #fuse-ants .meta, #fuse-ants .post-meta .share {
                     display:none;
@@ -821,39 +655,17 @@
                 color:{color:Banner Text};
                 margin:0 0 25px 0;
             }
-
+            
             #banner a {
                 color:{color:Banner Text};
             }
 
             @media (max-width: 740px) { 
-                #fuse-sc-player {
-                    width:95%;
-                }
-            
+  
                 .fuse-overlay {
                     background: {color:Background};
                 }
-            
-                .soundcloud-close {
-                    width:5%;
-                }
-            
-                .soundcloud-player.closed {
-                    transform: translateX(-95%);
-                }
-                .soundcloud-player {
-                    width:100%;
-                }
-                #fuse-sc-player .img {
-                    display:none;
-                }
-                #fuse-sc-player .sc-meta {
-                    width: 70%;
-                }
-                #fuse-sc-player .sc-controls {
-                    width: 30%;
-                }
+
                 .logo, .logo a {
                     font:19px "{select:Logo Font}", Helvetica Neue, Arial, sans-serif !important;
                 }
@@ -862,6 +674,19 @@
                 }
                 body.sidebar-open .sidebar-toggle span, body.sidebar-open .sidebar-toggle span:before, body.sidebar-open .sidebar-toggle span:after {
                     background:{color:Sidebar Accent};
+                }
+                #header {
+                    background:{color:Mobile Header Background};
+                }
+                #header a, .logo a, .logo, .sidebar-toggle {
+                    color:{color:Mobile Header Text};
+                }
+                
+                .sidebar-toggle span, .sidebar-toggle span:before, .sidebar-toggle span:after {
+                    background:{color:Mobile Header Text};
+                }
+                .close-mobile-modal svg g {
+                    fill:{color:Mobile Header Text};
                 }
             }
             
@@ -943,6 +768,7 @@
         </div>
 
     {block:IndexPage}
+        <div class="dark-overlay"></div>
         {block:ifbanner}
             {block:ifbannerbackgroundimage}
             <div id="banner">
@@ -971,15 +797,16 @@
         {/block:ifbanner}
     {/block:IndexPage}
     
-    <div class="close-modal">
-        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path>
-            </g>
-        </svg>
-    </div>
     
     <div class="fuse-overlay">
+        <div class="close-modal">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path>
+                </g>
+            </svg>
+        </div>
+    
         <div class='fuse-container'>
 
             <div class="fuse-content">
@@ -1180,52 +1007,30 @@
         </div>
     </div>
     {/block:ifsidebar}
-    
 
-    {block:IfSoundcloudWidgetURL}
-        <div class="soundcloud-player">
-            <div class="inner">
-                <div id="fuse-sc-player" class="cl" style="opacity:1;">
-                    <div class="sc-meta cl">
-                        <div class="img">
-                            <i class="fa fa-play"></i>
-                        </div>
-                        <div class="sc-info">
-                            <p class="artist"></p>
-                            <p class="track"></p>
-                        </div>
-                    </div>
-                    <div class="sc-controls">
-                        <div class="next">
-                            <i class="fa fa-step-forward"></i>
-                        </div>
-                        <div class="prev">
-                            <i class="fa fa-step-backward"></i>
-                        </div>
-                       <div class="pause-play">
-                            <i class="fa fa-pause"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="soundcloud-close opened"><div class="inner"><i class="fa fa-lg fa-angle-left"></i></div></div>
+    <div id="header">
+        {block:ifsidebar}
+            <div class="sidebar-toggle">
+                <span></span>
             </div>
+        {/block:ifsidebar}
+        
+        <div class="logo {select:Logo Text}">
+            {block:ifnotlogoimage}
+                <a href="/" title="{lang:Home}">{Title}</a>
+            {/block:ifnotlogoimage}
+            {block:iflogoimage}
+                <a href="/"><img src="{image:Logo}" alt="logo" /></a>
+            {/block:iflogoimage}
         </div>
-    {/block:IfSoundcloudWidgetURL}
-
-
-    {block:ifsidebar}
-        <div class="sidebar-toggle">
-            <span></span>
+        
+        <div class="close-mobile-modal">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path>
+                </g>
+            </svg>
         </div>
-    {/block:ifsidebar}
-    
-    <div class="logo {select:Logo Text}">
-        {block:ifnotlogoimage}
-            <a href="/" title="{lang:Home}">{Title}</a>
-        {/block:ifnotlogoimage}
-        {block:iflogoimage}
-            <a href="/"><img src="{image:Logo}" alt="logo" /></a>
-        {/block:iflogoimage}
     </div>
     
 
@@ -1276,7 +1081,7 @@
             
                         {block:Text}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-text{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="text">
-                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                             
                                 <div class="content">
@@ -1289,7 +1094,7 @@
             
                         {block:Audio}      
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-audio{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
-                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                             
                                 <div class="media">
@@ -1303,7 +1108,7 @@
         
                         {block:Video}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-video{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
-                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inner">
                                 <div class="media">{Video-500}</div>
             
@@ -1315,7 +1120,7 @@
             
                         {block:Quote}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-quote{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
-                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                    <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                 <div class="inner">
                                     <div class="content">
                                         <blockquote>{Quote}</blockquote>
@@ -1326,7 +1131,7 @@
                 
                          {block:Link}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-link{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
-                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                    <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                 <div class="inner">
                                     <div class="content">
                                         <h1><a class="link" href="{URL}">{Name}</a></h1>
@@ -1337,7 +1142,7 @@
                
                         {block:Chat}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-chat{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat"> 
-                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="content">
                                 <ul class="chat">
                                     {block:Lines}<li class="{Alt}">{block:Label}<span class="person">{Label}</span>{/block:Label}<span class="said"> {Line} </span></li>{/block:Lines}
@@ -1348,7 +1153,7 @@
                     
                         {block:Photoset}
                             <article id="{PostID}" class="{block:IndexPage}ants-item-two post modal post-photoset pp{/block:IndexPage}" data-id="{PostID}"  data-notes="{PostNotesURL}" data-pt="photoset">
-                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                    <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                                     <div class="media">
                                         <div class="fuse-photoset ips">
                                             <div class="photoset-count" data-id="{PostID}"><span>1</span> / {PhotoCount}</div>
@@ -1371,7 +1176,7 @@
                         
                         {block:Answer}
                         <article id="{PostID}" class="{block:IndexPage}ants-item-two post post-answer{/block:IndexPage}" data-notes="{PostNotesURL}" data-pt="answer">
-                        <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                         <div class="inner">
                             <div class="content">
                             <div class="asker-box">
@@ -1554,22 +1359,10 @@
     <script type="text/javascript" src="http://static.tumblr.com/evx2wil/Mr8oaitvd/plugins.js">
     </script>
 
-    <script type="text/javascript" src="http://static.tumblr.com/evx2wil/LUIoajehy/kiss.js"></script>
-    <script src="http://static.tumblr.com/evx2wil/vi2oajei6/modal.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/evx2wil/rw0oalcm2/kiss.js"></script>
+    <script src="http://static.tumblr.com/evx2wil/Clkoalclt/modal.js"></script>
     <script src="http://static.tumblr.com/evx2wil/Exeoak2ma/ants.js"></script>
-    
-    {block:IfSoundcloudWidgetURL} 
-        <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-        <script src="https://w.soundcloud.com/player/api.js"></script>
-        <script>
-            soundcloudURL = "{text:Soundcloud Widget URL}";
-            soundcloudClientID = '394aae1023264c7233cb81fab17fe036';
-            // SC.initialize({
-            //     client_id: soundcloudClientID
-            // });
-        </script>
-        <script src="http://static.tumblr.com/evx2wil/yAdoad0ru/sc.js"></script>
-    {/block:IfSoundcloudWidgetURL}
+
     
     {block:IfTypeKitID}
         <!-- Typekit -->
@@ -1608,9 +1401,7 @@
                         var reblogSvg = $(this).find('svg.dual-reblog');
                         $(this).find("a.reblog_button").append(reblogSvg);
                     });
-                    {block:IfSoundcloudWidgetURL}
-                        $.fuseSC({block:IfSoundcloudWidgetAutoplay}true{/block:IfSoundcloudWidgetAutoplay}{block:IfNotSoundcloudWidgetAutoplay}false{/block:IfNotSoundcloudWidgetAutoplay},{block:IfSoundcloudWidgetShuffle}true{/block:IfSoundcloudWidgetShuffle}{block:IfNotSoundcloudWidgetShuffle}false{/block:IfNotSoundcloudWidgetShuffle});
-                    {/block:IfSoundcloudWidgetURL}
+
                 });
                 
                 {block:IndexPage}
@@ -1688,10 +1479,7 @@
         });
         {/block:IfDribbbleWidgetAccessToken}
     </script>
-    
-    {block:IfSoundcloudWidgetURL}
-        <div id="fuse-sc"></div>
-    {/block:IfSoundcloudWidgetURL}
+
 
     {block:Twitter}
         <script src="/tweets.js"></script>    
